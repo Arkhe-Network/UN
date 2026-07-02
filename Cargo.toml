@@ -33,6 +33,7 @@ members = [
     "crates/arkhe-bridge",
     "crates/arkhe-security-audit",
     "crates/arkhe-kernel",
+    "crates/arkhe-eval",
     "crates/safe-core-ethics",
     "crates/safe-core-persistence",
     "crates/safe-core-verifier",

@@ -118,14 +118,22 @@ name = "arkhe-bridge"
 version = "0.1.0"
 
 [[package]]
-name = "arkhe-containment"
-version = "0.1.0"
-
-[[package]]
 name = "arkhe-core"
 version = "0.1.0"
 dependencies = [
  "pretty_assertions",
+]
+
+[[package]]
+name = "arkhe-eval"
+version = "1.0.0"
+dependencies = [
+ "chrono",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.18",
+ "tokio",
+ "tracing",
 ]
 
 [[package]]
@@ -202,17 +210,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "arkhe-owasp-guardrails"
-version = "0.1.0"
-dependencies = [
- "asi-golden-paths",
- "async-trait",
- "once_cell",
- "regex",
- "tokio",
-]
-
-[[package]]
 name = "arkhe-parsing"
 version = "0.1.0"
 dependencies = [
@@ -245,10 +242,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "arkhe-txn"
-version = "0.1.0"
-
-[[package]]
 name = "arrayref"
 version = "0.3.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -259,61 +252,6 @@ name = "arrayvec"
 version = "0.7.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f02882884d3e1bc524fb12c79f107f6ad0e1cfd498c536ffb494301740995dfe"
-
-[[package]]
-name = "asi-evals"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "serde",
- "tokio",
- "tracing",
-]
-
-[[package]]
-name = "asi-golden-paths"
-version = "0.1.0"
-dependencies = [
- "arkhe-containment",
- "arkhe-txn",
- "async-trait",
- "chrono",
- "serde",
- "serde_json",
- "thiserror 2.0.18",
- "tokio",
- "tracing",
-]
-
-[[package]]
-name = "asi-governance"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "chrono",
- "serde",
- "serde_json",
- "thiserror 2.0.18",
- "tokio",
- "tracing",
- "uuid",
-]
-
-[[package]]
-name = "asi-mcp-connectors"
-version = "0.1.0"
-dependencies = [
- "asi-golden-paths",
- "asi-governance",
- "async-trait",
- "base64",
- "reqwest",
- "serde",
- "serde_json",
- "thiserror 2.0.18",
- "tokio",
- "tracing",
-]
 
 [[package]]
 name = "astral-tokio-tar"
