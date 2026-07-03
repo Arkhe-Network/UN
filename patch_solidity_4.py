@@ -1,4 +1,10 @@
-/*
+import os
+
+for filename in ["crates/arkhe-desci/contracts/DesciAnchor.sol", "crates/arkhe-desci/contracts/DesciIdentity.sol"]:
+    with open(filename, "r") as f:
+        code = f.read()
+
+    license_header = """/*
  * Copyright 2026 ConsenSys AG.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
@@ -12,4 +18,12 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-pragma solidity ^0.8.20;
+"""
+    # Remove any existing License headers
+    if "/*" in code:
+        code = code.split("pragma solidity", 1)[-1]
+
+    code = f"{license_header}\npragma solidity ^0.8.20;{code}"
+
+    with open(filename, "w") as f:
+        f.write(code)
